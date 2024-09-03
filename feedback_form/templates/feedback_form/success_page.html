@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Submitted</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 80px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 24px;
+            color: #007bb5;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #555555;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bb5;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #005f8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-check-circle logo"></i>
+        <div class="message">
+            Your feedback has been successfully submitted!
+        </div>
+        <div class="description">
+            Thank you for taking the time to provide us with your feedback. We appreciate your input and will review it shortly.
+        </div>
+        <a href="/" class="button">Return to Homepage</a>
+    </div>
+    
+    <script>
+        // Check if the browser supports the SpeechSynthesis API
+        if ('speechSynthesis' in window) {
+            // Create a new speech synthesis utterance
+            var utterance = new SpeechSynthesisUtterance('Thank you for choosing us.');
+
+            // Set the voice and language (optional)
+            utterance.voice = speechSynthesis.getVoices().find(voice => voice.name === 'Google US English') || null;
+            utterance.lang = 'en-US';
+
+            // Speak the utterance
+            window.addEventListener('load', function() {
+                speechSynthesis.speak(utterance);
+            });
+        }
+    </script>
+</body>
+</html>
+
+

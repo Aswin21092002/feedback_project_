@@ -1,0 +1,14 @@
+/* styles.css */
+.radio-inline {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.radio-inline input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Ensure alignment and spacing */
+.form-group {
+    margin-bottom: 15px;
+}

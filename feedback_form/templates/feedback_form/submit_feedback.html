@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Feedback</title>
+    
+    <style>
+        /* General Form Container Styling */
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center; /* Center align header content */
+            margin-bottom: 20px; /* Space below the header */
+        }
+
+        .logo-container {
+            margin-bottom: 10px; /* Space between logo and heading */
+        }
+
+        .logo-image {
+            max-width: 100%; /* Make sure the logo is responsive */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Center Align Text */
+h1, p {
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove default margin */
+}
+
+/* H1 Styling */
+h1 {
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 10px; /* Optional: space below the heading */
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 16px; /* Font size for paragraph */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+
+        /* Form Group Styling */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* Label Styling */
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        /* Radio Button Styling */
+.form-group .inline-radio {
+    display: flex;
+    list-style-type: none; /* Remove default list markers */
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap; /* Wrap items to the next line if they exceed the container width */
+}
+
+.form-group .inline-radio li {
+    display: flex; /* Align radio button and text horizontally */
+    align-items: center; /* Center items vertically */
+    margin-right: 20px; /* Space between options */
+    margin-bottom: 10px; /* Space between rows of options */
+}
+
+.form-group .inline-radio li input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .form-group .inline-radio {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .form-group .inline-radio li {
+        margin-right: 0; /* Remove horizontal spacing on small screens */
+        margin-bottom: 15px; /* Space between options on mobile view */
+    }
+}
+
+        
+        /* Submit Button Styling */
+        .submit-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #003366;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Audio Delete Button */
+.audio-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.audio-controls button {
+    padding: 10px 20px; /* Same padding as submit button */
+    background-color: #003366; /* Dark blue color */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons and audio */
+}
+
+.audio-controls button:hover {
+    background-color: #002244; /* Darker shade of blue for hover effect */
+}
+
+.audio-controls audio {
+    margin-right: 10px; /* Space between audio controls and delete button */
+}
+
+        /* General Form Container Styling */
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group Styling for Mobile View */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 100%; /* Ensure full-width */
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Full width for input fields */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Make text areas responsive */
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Set a minimum height for better usability */
+}
+
+/* Date Fields in Same Row */
+/* Container for date fields */
+.date-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Reduced gap to 20px */
+}
+
+/* Each date field takes up equal space but with reduced width */
+.date-group .date-field {
+    flex: 1;
+    min-width: 0; /* Allow the field to shrink if necessary */
+}
+
+/* Label styling */
+.date-group label {
+    margin: 0; /* Remove margin from labels */
+    font-weight: bold; /* Optional: make label bold for better readability */
+}
+
+/* Input styling */
+.date-group input {
+    width: 100%; /* Full width for input fields */
+    padding: 8px; /* Optional: add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* General Form Container Styling */
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 100%; /* Ensure full-width */
+}
+
+/* Label Styling */
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group select {
+    width: 100%; /* Full width for input fields */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Specific Styling for Branch Selection */
+.branch-selection {
+    /* Add any specific styling if needed */
+}
+
+/* Ensure branch selection matches the size of name column */
+.form-group {
+    width: 100%;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%; /* Make sure it occupies full width */
+}
+
+
+/* Radio Group Styling */
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+ <header>
+        <div class="logo-container">
+            <img src="//srikrishnasweets.com/cdn/shop/files/SKS_SriKrishnaSweets_Sri_Krishna_Sweets_mysurpa_Muralis_logo_1280x356_-_SKS.png?v=1711347041&amp;width=500" 
+                 srcset="//srikrishnasweets.com/cdn/shop/files/SKS_SriKrishnaSweets_Sri_Krishna_Sweets_mysurpa_Muralis_logo_1280x356_-_SKS.png?v=1711347041&amp;width=150 150w, 
+                         //srikrishnasweets.com/cdn/shop/files/SKS_SriKrishnaSweets_Sri_Krishna_Sweets_mysurpa_Muralis_logo_1280x356_-_SKS.png?v=1711347041&amp;width=225 225w, 
+                         //srikrishnasweets.com/cdn/shop/files/SKS_SriKrishnaSweets_Sri_Krishna_Sweets_mysurpa_Muralis_logo_1280x356_-_SKS.png?v=1711347041&amp;width=300 300w" 
+                 width="150" height="41.71875" loading="eager" sizes="(max-width: 300px) 50vw, 150px" 
+                 class="logo-image" fetchpriority="high" alt="Sri Krishna Sweets Logo">
+        </div>
+    </header>
+    <div class="form-container">
+        <h1>Welcome to Sri Krishna Sweets</h1>
+        <p>Please fill out the form below to submit your complaint. We value your feedback and will address your concerns promptly.</p>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+ 
+
+            <div class="form-group">
+                <label for="{{ form.name.id_for_label }}">Name:</label>
+                {{ form.name }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.phone_number.id_for_label }}">Phone number:</label>
+                {{ form.phone_number }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.branch.id_for_label }}">Branch:</label>
+                {{ form.branch }}
+            </div>
+
+            <div class="form-group">
+                <label>Value for money:</label>
+                 {{ form.value_for_money }}
+            </div>
+
+            
+
+            
+
+            <div class="form-group">
+                <label>Packaging:</label>
+                {{ form.packaging }}
+            </div>
+
+            <div class="form-group">
+                <label>Quality:</label>
+                {{ form.quality }}
+            </div>
+
+            <div class="form-group">
+                <label>Display:</label>
+                {{ form.display }}
+            </div>
+
+            <div class="form-group">
+                <label>Variety:</label>
+                {{ form.variety }}
+            </div>
+
+
+            <div class="form-group">
+                <label for="{{ form.comments.id_for_label }}">Comments:</label>
+                {{ form.comments }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.employee_name_and_id.id_for_label }}">Employee name and id:</label>
+                {{ form.employee_name_and_id }}
+            </div>
+
+
+             
+        
+            <div class="form-group date-group">
+                <div class="date-field">
+                    <label for="{{ form.date_of_birth.id_for_label }}">Date of birth:</label>
+                    {{ form.date_of_birth }}
+                </div>
+                <div class="date-field">
+                    <label for="{{ form.anniversary.id_for_label }}">Anniversary:</label>
+                    {{ form.anniversary }}
+                </div>
+            </div>
+            
+
+             <div class="form-group">
+                <label for="voiceRecording">Voice Recording:</label>
+                <div class="audio-controls">
+                    <button type="button" id="recordButton">Record</button>
+                    <button type="button" id="stopButton" disabled>Stop</button>
+                    <button type="button" id="deleteAudio" style="display: none;">Delete</button>
+                    <audio id="audioPlayback" controls style="display:none;"></audio>
+                    <input type="hidden" name="voice_recording" id="voiceRecording">
+                </div>
+            </div>
+
+            <div class="submit-container">
+                <button type="submit">Submit Feedback</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let recordButton = document.getElementById('recordButton');
+        let stopButton = document.getElementById('stopButton');
+        let deleteAudioButton = document.getElementById('deleteAudio');
+        let audioPlayback = document.getElementById('audioPlayback');
+        let voiceRecordingInput = document.getElementById('voiceRecording');
+        let mediaRecorder;
+        let audioChunks = [];
+
+        recordButton.addEventListener('click', async () => {
+            let stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.start();
+
+            recordButton.disabled = true;
+            stopButton.disabled = false;
+
+            mediaRecorder.ondataavailable = event => {
+                audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                let audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                let audioUrl = URL.createObjectURL(audioBlob);
+                audioPlayback.src = audioUrl;
+                audioPlayback.style.display = 'block';
+                deleteAudioButton.style.display = 'inline';
+
+                let reader = new FileReader();
+                reader.readAsDataURL(audioBlob);
+                reader.onloadend = function() {
+                    voiceRecordingInput.value = reader.result;
+                };
+
+                audioChunks = [];
+            };
+        });
+
+        stopButton.addEventListener('click', () => {
+            mediaRecorder.stop();
+            recordButton.disabled = false;
+            stopButton.disabled = true;
+        });
+
+        deleteAudioButton.addEventListener('click', () => {
+            audioPlayback.src = '';
+            audioPlayback.style.display = 'none';
+            deleteAudioButton.style.display = 'none';
+            voiceRecordingInput.value = '';
+        });
+    </script>
+</body>
+</html>
+
+
+
